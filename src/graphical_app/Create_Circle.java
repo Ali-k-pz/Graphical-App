@@ -6,14 +6,14 @@ public class Create_Circle {
     private int Center_Point[] = new int[2];
     private int Next_Point,X_Point, Y_Point;
     
-    private final int Image_Weight,Image_Height;
+    private final int Image_Width,Image_Height;
     
-    public Create_Circle(int Radius, int Weight, int Height){
+    public Create_Circle(int Radius, int Width, int Height){
     
-        Image_Weight = Weight;
+        Image_Width = Width;
         Image_Height = Height;
         
-        Center_Point[0] = Image_Weight / 2;
+        Center_Point[0] = Image_Width / 2;
         Center_Point[1] = Image_Height / 2;
         
         X_Point = 0;

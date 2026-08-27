@@ -16,7 +16,7 @@ public class Dimention_Frame extends JFrame{
     }
     
     private JButton Btn;
-    private JTextField Weight,Height,Radius;
+    private JTextField Width,Height,Radius;
     private JLabel Sentens,H_Label,W_Label,R_Label,C_Label;
     private JComboBox Choose_Color;
     private String s[] = {"Red","Blue","Orange","Yellow"};
@@ -29,7 +29,7 @@ public class Dimention_Frame extends JFrame{
         this.setLayout(null);
         
         Height = new JTextField();
-        Weight = new JTextField();
+        Width = new JTextField();
         Radius = new JTextField();
         Sentens = new JLabel();
         H_Label = new JLabel();
@@ -46,14 +46,14 @@ public class Dimention_Frame extends JFrame{
         Sentens.setHorizontalAlignment(JTextField.CENTER);
         Sentens.setFont(new Font("Yu Gothic UI", 1, 18));
 
-        Weight.setBounds(75, 50, 100, 40);
-        Weight.setFont(new Font("Yu Gothic UI", 1, 20));
-        Weight.setHorizontalAlignment(JTextField.CENTER);
+        Width.setBounds(75, 50, 100, 40);
+        Width.setFont(new Font("Yu Gothic UI", 1, 20));
+        Width.setHorizontalAlignment(JTextField.CENTER);
         
         W_Label.setBounds(15, 47, 55, 40);
         W_Label.setFont(new Font("Yu Gothic UI", 1, 14));
         W_Label.setHorizontalAlignment(JLabel.CENTER);
-        W_Label.setText("Weight :");
+        W_Label.setText("Width :");
 
         Height.setBounds(265, 50, 100, 40);
         Height.setFont(new Font("Yu Gothic UI", 1, 20));
@@ -86,7 +86,7 @@ public class Dimention_Frame extends JFrame{
         Btn.setFont(new Font("Yu Gothic UI", 1, 20));
         
         this.add(Sentens);
-        this.add(Weight);
+        this.add(Width);
         this.add(W_Label);
         this.add(Height);
         this.add(H_Label);
@@ -100,7 +100,7 @@ public class Dimention_Frame extends JFrame{
     }
     
     private void Pass_Data_Action (ActionEvent evt){
-        System.out.println(Weight.getText());
+        System.out.println(Width.getText());
         System.out.println(Height.getText());
         System.out.println(Radius.getText());
         System.out.println(Choose_Color.getSelectedItem());
