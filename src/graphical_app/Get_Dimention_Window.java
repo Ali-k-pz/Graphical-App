@@ -113,10 +113,11 @@ public class Get_Dimention_Window extends JFrame{
         }
         else
             Color_Number = 4;
-        
-        new Create_Image().Create_Image(Color_Number);
-        
-        Draw_Circle draw_Circle = new Draw_Circle(Integer.parseInt(Radius.getText()),Integer.parseInt(Width.getText()),                                             Integer.parseInt(Height.getText()));
+                
+        Draw_Circle draw_Circle = new Draw_Circle(Integer.parseInt(Radius.getText()),
+                Integer.parseInt(Width.getText()),
+                Integer.parseInt(Height.getText()),
+                Color_Number);
         
         
     }
