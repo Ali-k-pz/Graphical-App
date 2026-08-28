@@ -9,9 +9,9 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-public class Dimention_Frame extends JFrame{
+public class Get_Dimention_Window extends JFrame{
     
-    public Dimention_Frame(){
+    public Get_Dimention_Window(){
         Get_Dimention();
     }
     
@@ -20,6 +20,7 @@ public class Dimention_Frame extends JFrame{
     private JLabel Sentens,H_Label,W_Label,R_Label,C_Label;
     private JComboBox Choose_Color;
     private String s[] = {"Red","Blue","Orange","Yellow"};
+    private int Color_Number;
     
     private void Get_Dimention(){
         this.setBounds(400,200,400,250);
@@ -100,10 +101,23 @@ public class Dimention_Frame extends JFrame{
     }
     
     private void Pass_Data_Action (ActionEvent evt){
-        System.out.println(Width.getText());
-        System.out.println(Height.getText());
-        System.out.println(Radius.getText());
-        System.out.println(Choose_Color.getSelectedItem());
+                
+        if(Choose_Color.getSelectedObjects().equals("Red")){
+            Color_Number = 1;
+        }
+        else if(Choose_Color.getSelectedObjects().equals("Blue")){
+            Color_Number = 2;
+        }
+        else if(Choose_Color.getSelectedObjects().equals("Orange")){
+            Color_Number = 3;
+        }
+        else
+            Color_Number = 4;
+        
+        new Create_Image().Create_Image(Color_Number);
+        
+        Draw_Circle draw_Circle = new Draw_Circle(Integer.parseInt(Radius.getText()),Integer.parseInt(Width.getText()),                                             Integer.parseInt(Height.getText()));
+        
         
     }
 }

@@ -1,6 +1,6 @@
 package graphical_app;
 
-public class Create_Circle {
+public class Draw_Circle {
 
     private int Circle_Point[][] = new int[8][2];
     private int Center_Point[] = new int[2];
@@ -8,7 +8,9 @@ public class Create_Circle {
     
     private final int Image_Width,Image_Height;
     
-    public Create_Circle(int Radius, int Width, int Height){
+    Create_Image Pass_Dimention = new Create_Image();
+    
+    public Draw_Circle(int Radius, int Width, int Height){
     
         Image_Width = Width;
         Image_Height = Height;
@@ -63,8 +65,9 @@ public class Create_Circle {
                 System.out.println();
             }
             System.out.println("-----------");
-            
             */
+            
+            Pass_Dimention.Create_Image(Image_Width, Image_Height, Circle_Point);
             
             if(Next_Point < 0)
                 Next_Point = Next_Point + 2*X_Point + 1;
