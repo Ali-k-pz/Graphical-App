@@ -101,14 +101,13 @@ public class Get_Dimention_Window extends JFrame{
     }
     
     private void Pass_Data_Action (ActionEvent evt){
-                
-        if(Choose_Color.getSelectedObjects().equals("Red")){
+        if(Choose_Color.getSelectedItem().equals("Red")){
             Color_Number = 1;
         }
-        else if(Choose_Color.getSelectedObjects().equals("Blue")){
+        else if(Choose_Color.getSelectedItem().equals("Blue")){
             Color_Number = 2;
         }
-        else if(Choose_Color.getSelectedObjects().equals("Orange")){
+        else if(Choose_Color.getSelectedItem().equals("Orange")){
             Color_Number = 3;
         }
         else

@@ -97,25 +97,25 @@ public class Draw_Circle {
             Circle_Point[4][0] = X_Point + Center_Point[1];
             Circle_Point[4][1] = Y_Point + Center_Point[0];
             try{
-                Buff_Img.setRGB(Circle_Point[4][0], Circle_Point[4][1], Pixel_Color);
+                Buff_Img.setRGB(Circle_Point[4][1], Circle_Point[4][0], Pixel_Color);
             }catch(ArrayIndexOutOfBoundsException e){}
             
             Circle_Point[5][0] = Center_Point[1] - X_Point;
             Circle_Point[5][1] = Y_Point + Center_Point[0];
             try{
-                Buff_Img.setRGB(Circle_Point[5][0], Circle_Point[5][1], Pixel_Color);
+                Buff_Img.setRGB(Circle_Point[5][1], Circle_Point[5][0], Pixel_Color);
             }catch(ArrayIndexOutOfBoundsException e){}
             
             Circle_Point[6][0] = X_Point + Center_Point[1];
             Circle_Point[6][1] = Center_Point[0] - Y_Point;
             try{
-                Buff_Img.setRGB(Circle_Point[6][0], Circle_Point[6][1], Pixel_Color);
+                Buff_Img.setRGB(Circle_Point[6][1], Circle_Point[6][0], Pixel_Color);
             }catch(ArrayIndexOutOfBoundsException e){}
             
             Circle_Point[7][0] = Center_Point[1] - X_Point;
             Circle_Point[7][1] = Center_Point[0] - Y_Point;
             try{
-                Buff_Img.setRGB(Circle_Point[7][0], Circle_Point[7][1], Pixel_Color);
+                Buff_Img.setRGB(Circle_Point[7][1], Circle_Point[7][0], Pixel_Color);
             }catch(ArrayIndexOutOfBoundsException e){}
             
             /*
