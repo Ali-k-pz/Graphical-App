@@ -116,8 +116,8 @@ public class Get_Dimention_Window extends JFrame{
         Draw_Circle draw_Circle = new Draw_Circle(Integer.parseInt(Radius.getText()),
                 Integer.parseInt(Width.getText()),
                 Integer.parseInt(Height.getText()),
-                Color_Number);
+                Color_Number);       
         
-        
+        this.setState(EXIT_ON_CLOSE);
     }
 }

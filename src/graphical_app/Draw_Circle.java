@@ -6,60 +6,66 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+    /*
+
+    The Used Formula for Circle: 
+        f(x,y) = x^2 + y^2 = r^2,
+
+    if f(x,y) == 0 then:
+        Point is on the Circle line
+
+    The Symmetry in Cirlce Shape, helps us to get the Octant of points 
+    and calculate the rest points of the Circle
+
+    */
 
 public class Draw_Circle {
 
+    // Create Image Variables
     private BufferedImage Buff_Img;
     private File f;
     private int Pixel_Color;
     private Color color = Color.GREEN;
-
     
+    // Create Circle Algorithm
     private int Circle_Point[][] = new int[8][2];
     private int Center_Point[] = new int[2];
     private int Next_Point,X_Point, Y_Point;
-    
-    private final int Image_Width,Image_Height;
+    private int Image_Width,Image_Height;
     
     public Draw_Circle(int Radius, int Width, int Height, int Color_Number){
-    
+        
         Image_Width = Width;
         Image_Height = Height;
         
-        Center_Point[0] = Image_Width / 2;
-        Center_Point[1] = Image_Height / 2;
-        
-        X_Point = 0;
-        Y_Point = Radius;
-                
-        Next_Point = 1 - Radius;
-
         Buff_Img = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_RGB);
         
+        // Create jpg file in directory
         f = new File("C:\\Users\\PARVAZ\\Desktop\\Image.jpg");
-
-        switch (Color_Number) {
-            case 1:
-                color = Color.RED;
-                break;
-            case 2:
-                color = Color.BLUE;
-                break;
-            case 3:
-                color = Color.ORANGE;
-                break;
-            default:
-                color = Color.YELLOW;
-                break;
-        }
+        
+        // Choosing the Color of Circle line
+        color = switch (Color_Number) {
+            case 1 -> Color.RED;
+            case 2 -> Color.BLUE;
+            case 3 -> Color.ORANGE;
+            default -> Color.YELLOW;
+        };
 
         Pixel_Color = color.getRGB();
 
+        // Read the jpg file to put the Circle
         try{
             Buff_Img = ImageIO.read(f);
-        }catch (IOException e){
-//            System.out.println(e);
-        }
+        }catch (IOException e){}
+        
+        // calculate the Circle Point
+        Center_Point[0] = Image_Width / 2;
+        Center_Point[1] = Image_Height / 2;
+
+        X_Point = 0;
+        Y_Point = Radius;
+        
+        Next_Point = 1 - Radius;
         
         while ( X_Point < Y_Point ){
             if(Next_Point < 0){
@@ -117,18 +123,7 @@ public class Draw_Circle {
             try{
                 Buff_Img.setRGB(Circle_Point[7][1], Circle_Point[7][0], Pixel_Color);
             }catch(ArrayIndexOutOfBoundsException e){}
-            
-            /*
-            //-> Check the Points
-            
-            for ( int i = 0 ; i < 8 ; i++ ){
-                for ( int j = 0 ; j < 2 ; j++)
-                    System.out.print(Circle_Point[i][j] + " ,");
-                System.out.println();
-            }
-            System.out.println("-----------");
-            */
-                        
+
             try{
                 ImageIO.write(Buff_Img, "jpg", f);
             }
@@ -142,6 +137,7 @@ public class Draw_Circle {
                 Next_Point = Next_Point + 2*X_Point - 2*Y_Point + 1;
 
         }
+        System.exit(0);
     }
     
 }
